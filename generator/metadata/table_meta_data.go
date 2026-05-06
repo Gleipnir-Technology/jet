@@ -2,9 +2,10 @@ package metadata
 
 // Table metadata struct
 type Table struct {
-	Name    string `sql:"primary_key"`
 	Comment string
 	Columns []Column
+	Imports []string
+	Name    string `sql:"primary_key"`
 }
 
 // MutableColumns returns list of mutable columns for table

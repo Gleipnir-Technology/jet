@@ -14,7 +14,9 @@ var tableSQLBuilderTemplate = `
 package {{package}}
 
 import (
-	"github.com/go-jet/jet/v2/{{dialect.PackageName}}"
+{{- range $i, $import := imports .Columns}}
+	"{{$import}}"
+{{- end}}
 )
 
 var {{tableTemplate.InstanceName}} = new{{tableTemplate.TypeName}}("{{schemaName}}", "{{.Name}}", "{{tableTemplate.DefaultAlias}}")
@@ -27,7 +29,7 @@ type {{structImplName}} struct {
 {{- range $i, $c := .Columns}}
 {{- $field := columnField $c}}
 {{- if not $field.Skip}}
-	{{$field.Name}} {{dialect.PackageName}}.Column{{$field.Type}} {{golangComment .Comment}}
+	{{$field.Name}} {{$field.PackageName}}.{{$field.Type}} {{golangComment .Comment}}
 {{- end}}
 {{- end}}
 
@@ -74,7 +76,7 @@ func new{{tableTemplate.TypeName}}Impl(schemaName, tableName, alias string) {{st
 {{- range $i, $c := .Columns}}
 {{- $field := columnField $c}}
 {{- if not $field.Skip }}
-		{{$field.Name}}Column = {{dialect.PackageName}}.{{$field.Type}}Column("{{$c.Name}}")
+		{{$field.Name}}Column = {{$field.PackageName}}.{{$field.TypeFactory}}("{{$c.Name}}")
 {{- end}}
 {{- end}}
 		allColumns     = {{dialect.PackageName}}.ColumnList{ {{columnList .Columns}} }

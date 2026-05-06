@@ -8,6 +8,7 @@ import (
 	"unicode"
 
 	"github.com/go-jet/jet/v2/generator/metadata"
+	"github.com/go-jet/jet/v2/internal/jet"
 	"github.com/go-jet/jet/v2/internal/utils/dbidentifier"
 )
 
@@ -62,13 +63,14 @@ func (sb SQLBuilder) ShouldSkip(skip bool) SQLBuilder {
 
 // TableSQLBuilder is template for generating table SQLBuilder files
 type TableSQLBuilder struct {
-	Skip         bool
-	Path         string
-	FileName     string
-	InstanceName string
-	TypeName     string
+	Column       func(dialect jet.Dialect, columnMetaData metadata.Column) TableSQLBuilderColumn
 	DefaultAlias string
-	Column       func(columnMetaData metadata.Column) TableSQLBuilderColumn
+	Imports []string
+	InstanceName string
+	FileName     string
+	Path         string
+	Skip         bool
+	TypeName     string
 }
 
 // ViewSQLBuilder is template for generating view SQLBuilder files
@@ -79,12 +81,13 @@ func DefaultTableSQLBuilder(tableMetaData metadata.Table) TableSQLBuilder {
 	tableNameGoIdentifier := dbidentifier.ToGoIdentifier(tableMetaData.Name)
 
 	return TableSQLBuilder{
-		Path:         "/table",
-		FileName:     dbidentifier.ToGoFileName(tableMetaData.Name),
-		InstanceName: tableNameGoIdentifier,
-		TypeName:     tableNameGoIdentifier + "Table",
-		DefaultAlias: "",
 		Column:       DefaultTableSQLBuilderColumn,
+		DefaultAlias: "",
+		FileName:     dbidentifier.ToGoFileName(tableMetaData.Name),
+		Imports:  []string{},
+		InstanceName: tableNameGoIdentifier,
+		Path:         "/table",
+		TypeName:     tableNameGoIdentifier + "Table",
 	}
 }
 
@@ -131,16 +134,19 @@ func (tb TableSQLBuilder) UseDefaultAlias(defaultAlias string) TableSQLBuilder {
 }
 
 // UseColumn returns new TableSQLBuilder with new column template function set
-func (tb TableSQLBuilder) UseColumn(columnsFunc func(column metadata.Column) TableSQLBuilderColumn) TableSQLBuilder {
+func (tb TableSQLBuilder) UseColumn(columnsFunc func(dialect jet.Dialect, column metadata.Column) TableSQLBuilderColumn) TableSQLBuilder {
 	tb.Column = columnsFunc
 	return tb
 }
 
 // TableSQLBuilderColumn is template for table sql builder column
 type TableSQLBuilderColumn struct {
-	Skip bool
+	Import string
 	Name string
+	PackageName string
+	Skip bool
 	Type string
+	TypeFactory string
 }
 
 var reservedKeywords = []string{"TableName", "Table", "SchemaName", "Alias", "AllColumns", "MutableColumns", "DefaultColumns"}
@@ -153,10 +159,14 @@ func renameIfReserved(name string) string {
 }
 
 // DefaultTableSQLBuilderColumn returns default implementation of TableSQLBuilderColumn
-func DefaultTableSQLBuilderColumn(columnMetaData metadata.Column) TableSQLBuilderColumn {
+func DefaultTableSQLBuilderColumn(dialect jet.Dialect, columnMetaData metadata.Column) TableSQLBuilderColumn {
+	package_name := dialect.PackageName()
 	return TableSQLBuilderColumn{
+		Import: "github.com/go-jet/jet/v2/" + package_name,
 		Name: renameIfReserved(dbidentifier.ToGoIdentifier(columnMetaData.Name)),
-		Type: getSqlBuilderColumnType(columnMetaData),
+		PackageName: package_name,
+		Type: "Column" + getSqlBuilderColumnType(columnMetaData),
+		TypeFactory: getSqlBuilderColumnType(columnMetaData)+"Column",
 	}
 }
 

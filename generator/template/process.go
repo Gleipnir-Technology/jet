@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"text/template"
 
@@ -15,6 +16,7 @@ import (
 	"github.com/go-jet/jet/v2/internal/jet"
 )
 
+type Dialect = jet.Dialect
 // ProcessSchema will process schema metadata and constructs go files using generator Template
 func ProcessSchema(dirPath string, schemaMetaData metadata.Schema, generatorTemplate Template) error {
 	if schemaMetaData.IsEmpty() {
@@ -194,34 +196,13 @@ func processTableSQLBuilder(fileTypes, dirPath string,
 			autoGenWarningTemplate+tableSQLBuilderTemplate,
 			tableMetaData,
 			template.FuncMap{
-				"package": func() string {
-					return tableSQLBuilder.PackageName()
-				},
-				"dialect": func() jet.Dialect {
-					return dialect
-				},
-				"schemaName": func() string {
-					return schemaMetaData.Name
-				},
-				"tableTemplate": func() TableSQLBuilder {
-					return tableSQLBuilder
-				},
-				"structImplName": func() string { // postgres only
-					structName := tableSQLBuilder.TypeName
-					return string(strings.ToLower(structName)[0]) + structName[1:]
-				},
 				"columnField": func(columnMetaData metadata.Column) TableSQLBuilderColumn {
-					return tableSQLBuilder.Column(columnMetaData)
+					return tableSQLBuilder.Column(dialect, columnMetaData)
 				},
-				"toUpper": strings.ToUpper,
-				"insertedRowAlias": func() string {
-					return insertedRowAlias(dialect)
-				},
-				"golangComment": formatGolangComment,
 				"columnList": func(columns []metadata.Column) string {
 					names := []string{}
 					for _, col := range columns {
-						bc := tableSQLBuilder.Column(col)
+						bc := tableSQLBuilder.Column(dialect, col)
 						if bc.Skip {
 							continue
 						}
@@ -229,6 +210,40 @@ func processTableSQLBuilder(fileTypes, dirPath string,
 					}
 					return strings.Join(names, ", ")
 				},
+				"dialect": func() jet.Dialect {
+					return dialect
+				},
+				"golangComment": formatGolangComment,
+				"imports": func(columns []metadata.Column) []string {
+					imports := make(map[string]struct{}, 0)
+					for _, columnMetaData := range columns {
+						c := tableSQLBuilder.Column(dialect, columnMetaData)
+						imports[c.Import] = struct{}{}
+					}
+					results := make([]string, 0)
+					for k, _ := range imports {
+						results = append(results, k)
+					}
+					sort.Strings(results)
+					return results
+				},
+				"insertedRowAlias": func() string {
+					return insertedRowAlias(dialect)
+				},
+				"package": func() string {
+					return tableSQLBuilder.PackageName()
+				},
+				"schemaName": func() string {
+					return schemaMetaData.Name
+				},
+				"structImplName": func() string { // postgres only
+					structName := tableSQLBuilder.TypeName
+					return string(strings.ToLower(structName)[0]) + structName[1:]
+				},
+				"tableTemplate": func() TableSQLBuilder {
+					return tableSQLBuilder
+				},
+				"toUpper": strings.ToUpper,
 			})
 		if err != nil {
 			return fmt.Errorf("failed to generate table sql builder type %s: %w", tableSQLBuilder.TypeName, err)
