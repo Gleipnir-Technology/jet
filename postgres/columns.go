@@ -77,6 +77,9 @@ type ColumnInterval = jet.ColumnInterval
 // IntervalColumn creates named interval column
 var IntervalColumn = jet.IntervalColumn
 
+type ColumnGeometry = jet.ColumnGeometry
+var GeometryColumn = jet.GeometryColumn
+
 // ColumnDateRange is interface of SQL date range column
 type ColumnDateRange = jet.ColumnRange[DateExpression]
 
@@ -112,3 +115,4 @@ type ColumnInt8Range jet.ColumnRange[jet.Int8Expression]
 
 // Int8RangeColumn creates named range with range column
 var Int8RangeColumn = jet.RangeColumn[jet.Int8Expression]
+

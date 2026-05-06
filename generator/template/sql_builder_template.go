@@ -242,8 +242,10 @@ func sqlToColumnType(columnMetaData metadata.Column) string {
 		return "Int8Range"
 	case "numrange":
 		return "NumericRange"
+	case "geometry":
+		return "Geometry"
 	default:
-		fmt.Println("- [SQL Builder] Unsupported sql column '" + columnMetaData.Name + " " + columnMetaData.DataType.Name + "', using StringColumn instead.")
+		fmt.Println("- [SQL Builder] Unsupported sql column '" + columnMetaData.Name + "' with type '" + columnMetaData.DataType.Name + "', using StringColumn instead.")
 		return "String"
 	}
 }

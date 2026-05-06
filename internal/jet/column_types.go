@@ -573,3 +573,48 @@ func RangeColumn[T Expression](name string) ColumnRange[T] {
 
 	return rangeColumn
 }
+
+//------------------------------------------------------//
+
+// ColumnGeometry is interface of PostGIS
+type ColumnGeometry interface {
+	GeometryExpression
+	Column
+
+	From(subQuery SelectTable) ColumnGeometry
+	SET(timestampzExp GeometryExpression) ColumnAssigment
+}
+
+type geometryColumnImpl struct {
+	geometryInterfaceImpl
+	*ColumnExpressionGeometryImpl
+}
+
+func (i *geometryColumnImpl) fromImpl(subQuery SelectTable) Projection {
+	return i.From(subQuery)
+}
+
+func (i *geometryColumnImpl) From(subQuery SelectTable) ColumnGeometry {
+	newGeometryColumn := GeometryColumn(i.name)
+	newGeometryColumn.setTableName(i.tableName)
+	newGeometryColumn.setSubQuery(subQuery)
+
+	return newGeometryColumn
+}
+
+func (i *geometryColumnImpl) SET(geometryExp GeometryExpression) ColumnAssigment {
+	return columnAssigmentImpl{
+		column:   i,
+		toAssign: geometryExp,
+	}
+}
+
+// GeometryColumn creates named timestamp with time zone column.
+func GeometryColumn(name string) ColumnGeometry {
+	geometryColumn := &geometryColumnImpl{}
+	geometryColumn.geometryInterfaceImpl.root = geometryColumn
+	geometryColumn.ColumnExpressionGeometryImpl = NewColumnGeometryImpl(name, "", geometryColumn)
+
+	return geometryColumn
+}
+
