@@ -5,9 +5,9 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/utils/datetime"
+	"github.com/Gleipnir-Technology/jet/internal/utils/datetime"
 
-	"github.com/go-jet/jet/v2/internal/jet"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
 )
 
 type unitType string

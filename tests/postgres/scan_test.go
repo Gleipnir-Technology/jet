@@ -2,7 +2,7 @@ package postgres
 
 import (
 	"context"
-	"github.com/go-jet/jet/v2/internal/utils/ptr"
+	"github.com/Gleipnir-Technology/jet/internal/utils/ptr"
 	"github.com/lib/pq"
 	"gopkg.in/guregu/null.v4"
 	"testing"
@@ -11,11 +11,11 @@ import (
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/postgres"
-	"github.com/go-jet/jet/v2/qrm"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/dvds/model"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/dvds/table"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/postgres"
+	"github.com/Gleipnir-Technology/jet/qrm"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/dvds/model"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/dvds/table"
 )
 
 var oneInventoryQuery = Inventory.

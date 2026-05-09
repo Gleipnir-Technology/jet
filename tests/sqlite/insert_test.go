@@ -2,17 +2,17 @@ package sqlite
 
 import (
 	"context"
-	"github.com/go-jet/jet/v2/internal/utils/ptr"
-	"github.com/go-jet/jet/v2/qrm"
+	"github.com/Gleipnir-Technology/jet/internal/utils/ptr"
+	"github.com/Gleipnir-Technology/jet/qrm"
 	"math/rand"
 
 	"testing"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/sqlite"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/sqlite/test_sample/model"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/sqlite/test_sample/table"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/sqlite"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/sqlite/test_sample/model"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/sqlite/test_sample/table"
 	"github.com/stretchr/testify/require"
 )
 

@@ -3,11 +3,11 @@ package postgres
 import (
 	"context"
 	"database/sql"
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/postgres"
-	"github.com/go-jet/jet/v2/stmtcache"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/dvds/model"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/dvds/table"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/postgres"
+	"github.com/Gleipnir-Technology/jet/stmtcache"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/dvds/model"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/dvds/table"
 	"github.com/stretchr/testify/require"
 	"testing"
 )

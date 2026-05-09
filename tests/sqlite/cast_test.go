@@ -1,8 +1,8 @@
 package sqlite
 
 import (
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/sqlite"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/sqlite"
 	"github.com/stretchr/testify/require"
 	"testing"
 )

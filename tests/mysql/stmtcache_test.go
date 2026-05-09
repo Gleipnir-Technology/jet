@@ -3,11 +3,11 @@ package mysql
 import (
 	"context"
 	"database/sql"
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/mysql"
-	"github.com/go-jet/jet/v2/stmtcache"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/mysql/dvds/model"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/mysql/dvds/table"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/mysql"
+	"github.com/Gleipnir-Technology/jet/stmtcache"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/mysql/dvds/model"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/mysql/dvds/table"
 	"github.com/stretchr/testify/require"
 	"testing"
 )

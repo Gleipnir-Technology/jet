@@ -9,13 +9,13 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/go-jet/jet/v2/qrm"
-	"github.com/go-jet/jet/v2/stmtcache"
-	"github.com/go-jet/jet/v2/tests/internal/utils/repo"
+	"github.com/Gleipnir-Technology/jet/qrm"
+	"github.com/Gleipnir-Technology/jet/stmtcache"
+	"github.com/Gleipnir-Technology/jet/tests/internal/utils/repo"
 	"github.com/jackc/pgx/v5/stdlib"
 
-	"github.com/go-jet/jet/v2/postgres"
-	"github.com/go-jet/jet/v2/tests/dbconfig"
+	"github.com/Gleipnir-Technology/jet/postgres"
+	"github.com/Gleipnir-Technology/jet/tests/dbconfig"
 	_ "github.com/lib/pq"
 	"github.com/pkg/profile"
 	"github.com/stretchr/testify/require"

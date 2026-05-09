@@ -3,7 +3,7 @@ package mysql
 import (
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/jet"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
 )
 
 // Keywords

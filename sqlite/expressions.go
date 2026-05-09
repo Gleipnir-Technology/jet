@@ -1,6 +1,6 @@
 package sqlite
 
-import "github.com/go-jet/jet/v2/internal/jet"
+import "github.com/Gleipnir-Technology/jet/internal/jet"
 
 // Expression is common interface for all expressions.
 // Can be Bool, Int, Float, String, Date, Time or Timestamp expressions.

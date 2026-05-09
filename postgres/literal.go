@@ -6,7 +6,7 @@ import (
 
 	"github.com/lib/pq"
 
-	"github.com/go-jet/jet/v2/internal/jet"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
 )
 
 // Bool is boolean literal constructor

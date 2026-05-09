@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	. "github.com/go-jet/jet/v2/postgres"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/table"
+	. "github.com/Gleipnir-Technology/jet/postgres"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/table"
 )
 
 type AllTypesJsonRawMessageResult struct {

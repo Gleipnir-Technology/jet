@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/jet"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
 )
 
 // This functions can be used, instead of its method counterparts, to have a better indentation of a complex condition

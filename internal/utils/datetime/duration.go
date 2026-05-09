@@ -1,7 +1,7 @@
 package datetime
 
 import (
-	//"github.com/go-jet/jet/v2/internal/utils/min"
+	//"github.com/Gleipnir-Technology/jet/internal/utils/min"
 	"time"
 )
 

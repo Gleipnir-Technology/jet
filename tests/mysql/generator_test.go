@@ -10,12 +10,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/generator/mysql"
-	"github.com/go-jet/jet/v2/generator/template"
-	"github.com/go-jet/jet/v2/internal/testutils"
-	mysql2 "github.com/go-jet/jet/v2/mysql"
-	"github.com/go-jet/jet/v2/tests/dbconfig"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/generator/mysql"
+	"github.com/Gleipnir-Technology/jet/generator/template"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	mysql2 "github.com/Gleipnir-Technology/jet/mysql"
+	"github.com/Gleipnir-Technology/jet/tests/dbconfig"
 )
 
 const genTestDirRoot = "./.gentestdata3"
@@ -246,7 +246,7 @@ func TestSQLBuilderColumnComment(t *testing.T) {
 package table
 
 import (
-	"github.com/go-jet/jet/v2/mysql"
+	"github.com/Gleipnir-Technology/jet/mysql"
 )
 
 var Link = newLinkTable("test_sample", "link", "")
@@ -336,7 +336,7 @@ var mpaaRatingEnumFile = `
 
 package enum
 
-import "github.com/go-jet/jet/v2/mysql"
+import "github.com/Gleipnir-Technology/jet/mysql"
 
 var FilmRating = &struct {
 	G    mysql.StringExpression
@@ -364,7 +364,7 @@ var actorSQLBuilderFile = `
 package table
 
 import (
-	"github.com/go-jet/jet/v2/mysql"
+	"github.com/Gleipnir-Technology/jet/mysql"
 )
 
 var Actor = newActorTable("dvds", "actor", "")
@@ -508,7 +508,7 @@ var actorInfoSQLBuilderFile = `
 package view
 
 import (
-	"github.com/go-jet/jet/v2/mysql"
+	"github.com/Gleipnir-Technology/jet/mysql"
 )
 
 var ActorInfo = newActorInfoTable("dvds", "actor_info", "")
@@ -643,7 +643,7 @@ var allTypesEnum = `
 
 package enum
 
-import "github.com/go-jet/jet/v2/mysql"
+import "github.com/Gleipnir-Technology/jet/mysql"
 
 var AllTypesEnum = &struct {
 	Value1 mysql.StringExpression
@@ -748,7 +748,7 @@ var allTypesTableContent = `
 package table
 
 import (
-	"github.com/go-jet/jet/v2/mysql"
+	"github.com/Gleipnir-Technology/jet/mysql"
 )
 
 var AllTypes = newAllTypesTable("test_sample", "all_types", "")

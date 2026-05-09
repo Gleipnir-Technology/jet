@@ -1,6 +1,6 @@
 package postgres
 
-import "github.com/go-jet/jet/v2/internal/jet"
+import "github.com/Gleipnir-Technology/jet/internal/jet"
 
 const (
 	// DEFAULT is jet equivalent of SQL DEFAULT

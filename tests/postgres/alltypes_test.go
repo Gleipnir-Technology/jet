@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/utils/ptr"
-	"github.com/go-jet/jet/v2/qrm"
+	"github.com/Gleipnir-Technology/jet/internal/utils/ptr"
+	"github.com/Gleipnir-Technology/jet/qrm"
 	"github.com/lib/pq"
 	"github.com/stretchr/testify/assert"
 
@@ -16,12 +16,12 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/go-jet/jet/v2/internal/testutils"
-	. "github.com/go-jet/jet/v2/postgres"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/model"
-	. "github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/table"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/view"
-	"github.com/go-jet/jet/v2/tests/testdata/results/common"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	. "github.com/Gleipnir-Technology/jet/postgres"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/model"
+	. "github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/table"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/view"
+	"github.com/Gleipnir-Technology/jet/tests/testdata/results/common"
 )
 
 func TestAllTypesSelect(t *testing.T) {
@@ -1855,21 +1855,21 @@ Column type: *jet.timestampColumnImpl
 Column type: *jet.timestampzColumnImpl
 Column type: *jet.intervalColumnImpl
 Column type: *jet.blobColumnImpl
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.BoolExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.IntegerExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.StringExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.DateExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimeExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimezExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimestampExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimestampzExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.IntervalExpression]
-Column type: *jet.arrayColumnImpl[github.com/go-jet/jet/v2/internal/jet.BlobExpression]
-Column type: *jet.rangeColumnImpl[github.com/go-jet/jet/v2/internal/jet.IntegerExpression]
-Column type: *jet.rangeColumnImpl[github.com/go-jet/jet/v2/internal/jet.DateExpression]
-Column type: *jet.rangeColumnImpl[github.com/go-jet/jet/v2/internal/jet.NumericExpression]
-Column type: *jet.rangeColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimestampExpression]
-Column type: *jet.rangeColumnImpl[github.com/go-jet/jet/v2/internal/jet.TimestampzExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.BoolExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.IntegerExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.StringExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.DateExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimeExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimezExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimestampExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimestampzExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.IntervalExpression]
+Column type: *jet.arrayColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.BlobExpression]
+Column type: *jet.rangeColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.IntegerExpression]
+Column type: *jet.rangeColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.DateExpression]
+Column type: *jet.rangeColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.NumericExpression]
+Column type: *jet.rangeColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimestampExpression]
+Column type: *jet.rangeColumnImpl[github.com/Gleipnir-Technology/jet/internal/jet.TimestampzExpression]
 `)
 
 	stmt := SELECT(

@@ -11,8 +11,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/jackc/pgtype"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/internal/utils/dbidentifier"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/internal/utils/dbidentifier"
 )
 
 // Model is template for model files generation

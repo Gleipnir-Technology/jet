@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/generator/template"
-	"github.com/go-jet/jet/v2/postgres"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/generator/template"
+	"github.com/Gleipnir-Technology/jet/postgres"
 )
 
 // DBConnection contains postgres connection details

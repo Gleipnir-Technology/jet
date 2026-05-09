@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/utils/must"
-	"github.com/go-jet/jet/v2/internal/utils/strslice"
-	"github.com/go-jet/jet/v2/qrm/internal"
+	"github.com/Gleipnir-Technology/jet/internal/utils/must"
+	"github.com/Gleipnir-Technology/jet/internal/utils/strslice"
+	"github.com/Gleipnir-Technology/jet/qrm/internal"
 	"github.com/google/uuid"
 )
 

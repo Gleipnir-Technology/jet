@@ -8,11 +8,11 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/go-jet/jet/v2/internal/utils/throw"
-	"github.com/go-jet/jet/v2/qrm"
-	"github.com/go-jet/jet/v2/sqlite"
-	"github.com/go-jet/jet/v2/stmtcache"
-	"github.com/go-jet/jet/v2/tests/dbconfig"
+	"github.com/Gleipnir-Technology/jet/internal/utils/throw"
+	"github.com/Gleipnir-Technology/jet/qrm"
+	"github.com/Gleipnir-Technology/jet/sqlite"
+	"github.com/Gleipnir-Technology/jet/stmtcache"
+	"github.com/Gleipnir-Technology/jet/tests/dbconfig"
 	"github.com/pkg/profile"
 	"github.com/stretchr/testify/require"
 

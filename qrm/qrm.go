@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/go-jet/jet/v2/internal/utils/must"
+	"github.com/Gleipnir-Technology/jet/internal/utils/must"
 )
 
 // Config holds the configuration settings for QRM scanning behavior.

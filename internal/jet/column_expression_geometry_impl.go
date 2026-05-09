@@ -1,7 +1,7 @@
 package jet
 
 import (
-	"github.com/go-jet/jet/v2/internal/3rdparty/snaker"
+	"github.com/Gleipnir-Technology/jet/internal/3rdparty/snaker"
 )
 
 
@@ -81,14 +81,14 @@ func (c *ColumnExpressionGeometryImpl) serialize(statement StatementType, out *S
 		out.WriteIdentifier(c.defaultAlias())
 		out.WriteString(")")
 	} else {
-		out.WriteString("ST_AsGeoJSON(")
+		//out.WriteString("ST_AsGeoJSON(")
 		if c.tableName != "" && !contains(options, ShortName) {
 			out.WriteIdentifier(c.tableName)
 			out.WriteByte('.')
 		}
 
 		out.WriteIdentifier(c.name)
-		out.WriteString(")")
+		//out.WriteString(")")
 	}
 }
 

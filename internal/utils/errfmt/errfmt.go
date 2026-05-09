@@ -1,7 +1,7 @@
 package errfmt
 
 import (
-	"github.com/go-jet/jet/v2/internal/utils/is"
+	"github.com/Gleipnir-Technology/jet/internal/utils/is"
 	"strings"
 )
 

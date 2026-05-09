@@ -1,8 +1,8 @@
 package template
 
 import (
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/internal/jet"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
 )
 
 // Template is generator template used for file generation

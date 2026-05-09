@@ -7,9 +7,9 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/internal/jet"
-	"github.com/go-jet/jet/v2/internal/utils/dbidentifier"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/internal/jet"
+	"github.com/Gleipnir-Technology/jet/internal/utils/dbidentifier"
 )
 
 // SQLBuilder is template for generating sql builder files
@@ -162,7 +162,7 @@ func renameIfReserved(name string) string {
 func DefaultTableSQLBuilderColumn(dialect jet.Dialect, columnMetaData metadata.Column) TableSQLBuilderColumn {
 	package_name := dialect.PackageName()
 	return TableSQLBuilderColumn{
-		Import: "github.com/go-jet/jet/v2/" + package_name,
+		Import: "github.com/Gleipnir-Technology/jet/" + package_name,
 		Name: renameIfReserved(dbidentifier.ToGoIdentifier(columnMetaData.Name)),
 		PackageName: package_name,
 		Type: "Column" + getSqlBuilderColumnType(columnMetaData),

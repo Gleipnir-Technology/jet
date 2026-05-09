@@ -138,7 +138,7 @@ type {{$modelTableTemplate.TypeName}} struct {
 
 var enumSQLBuilderTemplate = `package {{package}}
 
-import "github.com/go-jet/jet/v2/{{dialect.PackageName}}"
+import "github.com/Gleipnir-Technology/jet/{{dialect.PackageName}}"
 
 {{golangComment .Comment}}
 var {{enumTemplate.InstanceName}} = &struct {

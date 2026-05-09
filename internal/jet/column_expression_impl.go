@@ -3,7 +3,7 @@
 package jet
 
 import (
-	"github.com/go-jet/jet/v2/internal/3rdparty/snaker"
+	"github.com/Gleipnir-Technology/jet/internal/3rdparty/snaker"
 )
 
 

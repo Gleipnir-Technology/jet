@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/generator/template"
-	"github.com/go-jet/jet/v2/mysql"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/generator/template"
+	"github.com/Gleipnir-Technology/jet/mysql"
 	mysqldr "github.com/go-sql-driver/mysql"
 )
 

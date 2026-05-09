@@ -8,15 +8,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-jet/jet/v2/internal/testutils"
-	"github.com/go-jet/jet/v2/qrm"
+	"github.com/Gleipnir-Technology/jet/internal/testutils"
+	"github.com/Gleipnir-Technology/jet/qrm"
 	"github.com/google/go-cmp/cmp"
 	"github.com/jackc/pgtype"
 	"github.com/stretchr/testify/require"
 
-	. "github.com/go-jet/jet/v2/postgres"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/model"
-	"github.com/go-jet/jet/v2/tests/.gentestdata/jetdb/test_sample/table"
+	. "github.com/Gleipnir-Technology/jet/postgres"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/model"
+	"github.com/Gleipnir-Technology/jet/tests/.gentestdata/jetdb/test_sample/table"
 )
 
 func TestRangeTableSelect(t *testing.T) {

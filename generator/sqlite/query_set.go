@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-jet/jet/v2/generator/metadata"
-	"github.com/go-jet/jet/v2/internal/utils/semantic"
-	"github.com/go-jet/jet/v2/qrm"
+	"github.com/Gleipnir-Technology/jet/generator/metadata"
+	"github.com/Gleipnir-Technology/jet/internal/utils/semantic"
+	"github.com/Gleipnir-Technology/jet/qrm"
 )
 
 // sqliteQuerySet is dialect query set for SQLite

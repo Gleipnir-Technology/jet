@@ -1,4 +1,4 @@
-module github.com/go-jet/jet/v2
+module github.com/Gleipnir-Technology/jet
 
 go 1.24.0
 

@@ -1,6 +1,6 @@
 package jet
 
-import "github.com/go-jet/jet/v2/internal/utils/is"
+import "github.com/Gleipnir-Technology/jet/internal/utils/is"
 
 // SerializerTable interface
 type SerializerTable interface {

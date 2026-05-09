@@ -10,11 +10,11 @@ import (
 
 	// dot import so that jet go code would resemble as much as native SQL
 	// dot import is not mandatory
-	. "github.com/go-jet/jet/v2/examples/quick-start/.gen/jetdb/dvds/table"
-	. "github.com/go-jet/jet/v2/postgres"
+	. "github.com/Gleipnir-Technology/jet/examples/quick-start/.gen/jetdb/dvds/table"
+	. "github.com/Gleipnir-Technology/jet/postgres"
 
-	"github.com/go-jet/jet/v2/examples/quick-start/.gen/jetdb/dvds/enum"
-	"github.com/go-jet/jet/v2/examples/quick-start/.gen/jetdb/dvds/model"
+	"github.com/Gleipnir-Technology/jet/examples/quick-start/.gen/jetdb/dvds/enum"
+	"github.com/Gleipnir-Technology/jet/examples/quick-start/.gen/jetdb/dvds/model"
 )
 
 const (

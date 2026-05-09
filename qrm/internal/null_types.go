@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"fmt"
-	"github.com/go-jet/jet/v2/internal/utils/datetime"
+	"github.com/Gleipnir-Technology/jet/internal/utils/datetime"
 	"reflect"
 	"strconv"
 )
